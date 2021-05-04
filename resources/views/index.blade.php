@@ -12,19 +12,20 @@
                             <thead>
                                 <tr>
                                     <th scope="col">#</th>
-                                    <th scope="col">Nombre</th>
+                                    <th scope="col">Nombre de el archivo</th>
                                     <th scope="col">Seccion</th>
                                     <th scope="col">Eliminar</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 @foreach($files as $file)
+                                @if($file->user_id==Auth::id())
                                 <tr>
                                     <th scope="row"> {{$file->id}}</th>
-                                    <td><a target="_blank" href="storage/{{$file->section}}/{{$file->code_name}}">{{$file->nombre}}</a></td>
-                                    <td><a>{{$file->section}}</a></td>
+                                    <td><a target="_blank" href="storage/{{Auth::id()}}/{{$file->code_name}}">{{$file->nombre}}</a></td>
+                                    <td>{{$file->section}}</td>
                                     <td>
-                                        <form action="{{ route('user.files.destroy', $file->id) }}" method="POST">
+                                        <form action="{{ route('user.files.destroy',$file->id)}}" method="POST">
                                             @method('DELETE')
                                             @csrf
                                             <button type="submit" class="btn btn-sn btn-outline-danger">Eliminar
@@ -32,6 +33,7 @@
                                         </form>
                                     </td>
                                 </tr>
+                                @endif
                                 @endforeach
                         </table>
                     </div>
@@ -39,21 +41,6 @@
             </div>
         </div>
 
-        <div class="col-md-4">
-            <div class="card">
-
-                <div class="card-body">
-                    <div>
-                        Dale click en el boton para subir un archivo:
-                        <div>
-                            <a href="#" class="btn btn-primary pull-right" data-toggle="modal" data-target="#create">
-                                subir
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
 </div>
 

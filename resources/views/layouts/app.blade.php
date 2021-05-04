@@ -67,6 +67,10 @@
                                 </a>
                                 @endif
 
+                                <a class="dropdown-item" href="{{route('user.files.index')}}">
+                                    {{ __('Mis archivos') }}
+                                </a>
+
                                 <a class="dropdown-item" href="" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                     {{ __('Salir') }}

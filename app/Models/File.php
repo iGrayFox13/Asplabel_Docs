@@ -8,12 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class File extends Model
 {
     use HasFactory;
-    
-    protected $fillable = [
-        'url',
+
+    protected $fillable =[
+        'nombre',
+        'code_name',
+        'user_id',
         'section',
-        'nameP',
     ];
 }
-
-
