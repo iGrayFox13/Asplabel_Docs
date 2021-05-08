@@ -42,8 +42,7 @@ class FileController extends Controller
             foreach ($files as $file) {
                 $ext = explode(".", $file->getClientOriginalName());
                 $fileName=encrypt(Str::slug($ext[0])). '.'.$file->getClientOriginalExtension();
-
-                if ($ext[1] == 'pdf') {
+                if ($file->getClientOriginalExtension() == 'pdf') {
                     if (Storage::putFileAs('/public/' . $section . '/', $file, $fileName) && Storage::putFileAs('/public/' . $user_id . '/', $file, $fileName)) {
 
                         File::create([
@@ -52,11 +51,10 @@ class FileController extends Controller
                             'code_name'=>$fileName,
                             'section' => $section,
                         ]);
-                        $mensaje = "Todos los archivos se cargaron correctamente";
+                        $mensaje = "Los archivos se cargaron correctamente";
                     }
-                }
-                if ($ext[1] != 'pdf') {
-                    $mensaje2 = "Los archivos que no son pdf NO se pudieron subir";
+                }else  if($file->getClientOriginalExtension()!="pdf") {
+                    $mensaje2 = "los archivos que no son pdf no se subieron";
                 }
             }
         } else {
@@ -64,9 +62,9 @@ class FileController extends Controller
         }
 
 
-        if ($mensaje2 == "" && $mensaje == "Todos los archivos se cargaron correctamente") {
+        if ($mensaje == "Los archivos se cargaron correctamente" && $mensaje2=="") {
             Alert::success('EXITO', $mensaje);
-        } else if ($mensaje2 == "Los archivos que no son pdf no se pudieron subir") {
+        } else if ($mensaje2 == "los archivos que no son pdf no se subieron") {
             Alert::info('CUIDADO', $mensaje2);
         } else if ($mensaje == "Debes seleccionar un archivo") {
             Alert::error('ERROR', $mensaje);
