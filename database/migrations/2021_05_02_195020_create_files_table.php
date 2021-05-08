@@ -18,7 +18,7 @@ class CreateFilesTable extends Migration
             $table->enum('section',['Empresarial','Ingenieria civil','Ingenieria industrial','Ingenieria de sistemas','Ingenieria mecanica','Derecho','Fisioterapia']);
             $table->String('nombre');
             $table->text('code_name');
-            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('user_id'); 
             $table->foreign('user_id')->references('id');
             $table->timestamps();
         });

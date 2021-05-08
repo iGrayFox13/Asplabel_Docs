@@ -13,6 +13,6 @@ class File extends Model
         'nombre',
         'code_name',
         'user_id',
-        'section', 
+        'section',  
     ];
 }
