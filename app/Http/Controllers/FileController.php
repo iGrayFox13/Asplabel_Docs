@@ -56,7 +56,7 @@ class FileController extends Controller
                     }
                 }
                 if ($ext[1] != 'pdf') {
-                    $mensaje2 = "Los archivos que no son pdf no se pudieron subir";
+                    $mensaje2 = "Los archivos que no son pdf NO se pudieron subir";
                 }
             }
         } else {

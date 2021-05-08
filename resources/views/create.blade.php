@@ -20,6 +20,7 @@
                     <label class="col-md-3 col-form-label text-md-right">Seccion :</label>
                     <div class="col-md-6">
                         <select class="form-control " name="carpeta">
+                            <option value="Empresarial">Empresarial</option>
                             <option value="Ingenieria civil">Ingenieria civil</option>
                             <option value="Ingenieria industrial">Ingenieria industrial</option>
                             <option value="Ingenieria de sistemas">Ingenieria de sistemas</option>

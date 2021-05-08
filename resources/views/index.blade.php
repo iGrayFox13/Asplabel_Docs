@@ -32,7 +32,7 @@
                                             </button>
                                         </form>
                                     </td>
-                                </tr>
+                                </tr> 
                                 @endif
                                 @endforeach
                         </table>

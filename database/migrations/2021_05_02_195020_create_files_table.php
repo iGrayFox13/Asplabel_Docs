@@ -15,7 +15,7 @@ class CreateFilesTable extends Migration
     {
         Schema::create('files', function (Blueprint $table) {
             $table->id();
-            $table->enum('section',['Ingenieria civil','Ingenieria industrial','Ingenieria de sistemas','Ingenieria mecanica','Derecho','Fisioterapia']);
+            $table->enum('section',['Empresarial','Ingenieria civil','Ingenieria industrial','Ingenieria de sistemas','Ingenieria mecanica','Derecho','Fisioterapia']);
             $table->String('nombre');
             $table->text('code_name');
             $table->unsignedBigInteger('user_id');
