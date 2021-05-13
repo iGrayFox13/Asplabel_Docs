@@ -12,7 +12,7 @@
                             <thead>
                                 <tr>
                                     <th scope="col">#</th>
-                                    <th scope="col">Nombre de el archivo</th>
+                                    <th scope="col">Nombre</th>
                                     <th scope="col">Seccion</th>
                                     <th scope="col">Eliminar</th>
                                 </tr>
